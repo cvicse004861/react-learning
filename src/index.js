@@ -1,17 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+const name = 'ZhangSan';
+
+const fruit = [
+  { key: 'apple', value: '🍌' },
+  { key: 'banana', value: '🍎' },
+  { key: 'strawberry', value: '🍓' }
+];
+
+const h1 = (
+  <div>
+    <h1>
+      Hello React JSX.
+    </h1>
+    <div>
+      <span>{name} like </span>
+      {fruit.map(item => <span className='big' key={item.key}>{item.value}</span>)}
+    </div>
+  </div>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(h1, document.getElementById('root'));
